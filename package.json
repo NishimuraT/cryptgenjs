@@ -1,5 +1,5 @@
 {
-  "name": "cryptgen",
+  "name": "cryptgenjs",
   "version": "1.0.0",
   "description": "PlayReady Content Key Algorithm wrriten in nodejs",
   "main": "index.js",
