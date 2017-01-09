@@ -8,7 +8,7 @@ var crypto = require('crypto');
 /**
  *
  * @param keySeed Buffer
- * @param keyId String
+ * @param keyId Buffer
  */
 module.exports = function(keySeed, keyId) {
     const DRM_AES_KEYSIZE_128 = 16;
@@ -23,24 +23,24 @@ module.exports = function(keySeed, keyId) {
     //
     // Get the keyId as a byte array
     //
-    var keyIdAsBytes = new Buffer(keyId, 'hex');
+    // var keyIdAsBytes = new Buffer(keyId, 'hex');
 
     var sha256_a = crypto.createHash('sha256');
     sha256_a.update(truncatedKeySeed);
-    sha256_a.update(keyIdAsBytes);
+    sha256_a.update(keyId);
     var sha_a = sha256_a.digest();
 
     var sha256_b = crypto.createHash('sha256');
     sha256_b.update(truncatedKeySeed);
-    sha256_b.update(keyIdAsBytes);
+    sha256_b.update(keyId);
     sha256_b.update(truncatedKeySeed);
     var sha_b = sha256_b.digest();
 
     var sha256_c = crypto.createHash('sha256');
     sha256_c.update(truncatedKeySeed);
-    sha256_c.update(keyIdAsBytes);
+    sha256_c.update(keyId);
     sha256_c.update(truncatedKeySeed);
-    sha256_c.update(keyIdAsBytes);
+    sha256_c.update(keyId);
     var sha_c = sha256_c.digest();
 
     for (var i = 0; i < DRM_AES_KEYSIZE_128; i++) {
