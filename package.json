@@ -1,0 +1,11 @@
+{
+  "name": "cryptgen",
+  "version": "1.0.0",
+  "description": "PlayReady Content Key Algorithm wrriten in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
